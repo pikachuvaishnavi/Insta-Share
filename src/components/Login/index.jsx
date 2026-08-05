@@ -1,7 +1,7 @@
 import './index.css'
 import {useState} from 'react'
 import Cookie from 'js-cookie'
-import {useNavigate} from 'react-router'
+import {useNavigate, Navigate} from 'react-router'
 
 const Login = () => {
   const [username, setUsername] = useState('')
@@ -44,6 +44,11 @@ const Login = () => {
     navigate('/', {replace: true})
   }
 
+  const token = Cookie.get('jwt_token')
+  if (token !== undefined) {
+    return <Navigate to="/" replace />
+  }
+
   return (
     <section className="main">
       <img
@@ -78,7 +83,9 @@ const Login = () => {
             value={password}
           />
           {error && <p className="error">*{errormsg}</p>}
-          <button type="submit">Login</button>
+          <button className="login" type="submit">
+            Login
+          </button>
         </form>
       </div>
     </section>
