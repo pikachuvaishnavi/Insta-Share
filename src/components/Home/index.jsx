@@ -11,3 +11,8 @@ const Home = () => {
   )
 }
 export default Home
+// //<Slider {...settings}>
+//   {stories.map(eachStory => (
+//     <Story key={eachStory.id} story={eachStory} />
+//   ))}
+// </Slider>
