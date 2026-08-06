@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Home from './components/Home'
 import MyProfile from './components/MyProfile'
 import ProtectedRoute from './components/ProtectedRoute'
+import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -20,6 +21,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/myprofile"
           element={
