@@ -1,12 +1,15 @@
 // Write your code here
 import './index.css'
 import Header from '../Header'
+import UserStories from '../UserStories'
+import PostList from '../PostList'
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <h1>Home</h1>
+      <UserStories />
+      <PostList />
     </div>
   )
 }

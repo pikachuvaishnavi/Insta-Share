@@ -29,16 +29,16 @@ const UserDetails = () => {
       const data = await response.json()
       console.log(data)
       const fetched_data = {
-        id: data.profile.id,
-        name: data.profile.user_name,
-        userImg: data.profile.profile_pic,
-        followers: data.profile.followers_count,
-        following: data.profile.following_count,
-        posts: data.profile.posts,
-        posts_count: data.profile.posts_count,
-        bio: data.profile.user_bio,
-        stories: data.profile.stories,
-        userId: data.profile.user_id,
+        id: data.user_details.id,
+        name: data.user_details.user_name,
+        userImg: data.user_details.profile_pic,
+        followers: data.user_details.followers_count,
+        following: data.user_details.following_count,
+        posts: data.user_details.posts,
+        posts_count: data.user_details.posts_count,
+        bio: data.user_details.user_bio,
+        stories: data.user_details.stories,
+        userId: data.user_details.user_id,
       }
       console.log(fetched_data.posts)
       if (response.ok) {

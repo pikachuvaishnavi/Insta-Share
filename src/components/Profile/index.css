@@ -1,10 +1,11 @@
 .myprofile {
   padding: 1% 20%;
-  background-color: rgb(245, 240, 240);
+  background-color: #e9ecef;
   min-height: 100vh;
 }
 .profile-img {
   height: 120px;
+  border-radius: 50%;
 }
 .profile-text-bold {
   font-weight: 500;
@@ -33,7 +34,9 @@
 
 .counts {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 30px;
+  /* width: 80%; */
 }
 .posts-header {
   display: flex;

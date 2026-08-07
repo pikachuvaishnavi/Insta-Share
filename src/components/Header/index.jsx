@@ -4,10 +4,13 @@ import {FaSearch} from 'react-icons/fa'
 import {Link} from 'react-router'
 import Cookie from 'js-cookie'
 import {useNavigate} from 'react-router'
+import {useState} from 'react'
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState('')
+
   const navigate = useNavigate()
-  const logutApp = () => {
+  const logoutApp = () => {
     Cookie.remove('jwt_token')
     navigate('/login', {replace: true})
   }
@@ -23,18 +26,25 @@ const Header = () => {
       </div>
       <div className="lists">
         <div className="search-icon">
-          <input type="text" className="input" placeholder="Search Captions" />
-          <button type="button" className="search" data-testid="searchIcon">
+          <input
+            type="text"
+            className="input"
+            placeholder="Search Captions"
+            value={searchInput}
+            onChange={e => setSearchInput(e.target.value)}
+          />
+          <button
+            type="button"
+            className="search"
+            data-testid="searchIcon"
+            onClick={() => onSearch(searchInput)}
+          >
             <FaSearch />
           </button>
         </div>
-        <Link to="/">
-          <p>Home</p>
-        </Link>
-        <Link to="/myprofile">
-          <p>Profile</p>
-        </Link>
-        <button className="logout" onClick={logutApp}>
+        <Link to="/">Home</Link>
+        <Link to="/myprofile">Profile</Link>
+        <button className="logout" onClick={logoutApp}>
           Logout
         </button>
       </div>
