@@ -46,11 +46,17 @@ const MyProfile = () => {
     getData()
   }, [])
 
+  const alttext = {
+    imgalt: 'my profile',
+    storyalt: 'my story',
+    postalt: 'my post',
+  }
+
   return (
     <article>
       <Header />
 
-      <Profile details={userdata} key={userdata.id} />
+      <Profile details={userdata} key={userdata.id} alt={alttext} />
     </article>
   )
 }

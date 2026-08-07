@@ -45,7 +45,7 @@ const PostList = () => {
   }, [])
 
   return (
-    <section>
+    <section className="posts-section">
       {posts.map(post => (
         <Post key={post.id} details={post} />
       ))}

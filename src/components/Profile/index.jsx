@@ -2,7 +2,7 @@ import './index.css'
 import {BsGrid3X3} from 'react-icons/bs'
 
 const Profile = props => {
-  const {details} = props
+  const {details, alt} = props
   const {
     name,
     userImg,
@@ -14,10 +14,11 @@ const Profile = props => {
     stories,
     userId,
   } = details
+  const {imgalt, storyalt, postalt} = alt
   return (
     <section className="myprofile">
       <section className="profile-con">
-        <img className="profile-img" src={userImg} />
+        <img className="profile-img" src={userImg} alt={imgalt} />
         <div>
           <h1 className="profile-name">{name}</h1>
           <div className="counts">
@@ -39,9 +40,9 @@ const Profile = props => {
         {stories.map(eachitem => (
           <img
             className="stories-img"
+            alt={storyalt}
             src={eachitem.image}
             key={eachitem.id}
-            alt="my story"
           />
         ))}
       </div>
@@ -57,7 +58,7 @@ const Profile = props => {
               className="posts-img"
               src={eachitem.image}
               key={eachitem.id}
-              alt="my posts"
+              alt={postalt}
             />
           ))}
         </div>

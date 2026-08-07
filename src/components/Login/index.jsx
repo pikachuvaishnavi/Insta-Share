@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <section className="main">
       <img
-        alt="Login Image"
+        alt="website login"
         className="login-img"
         src="https://res.cloudinary.com/danbzhmg7/image/upload/v1785896945/login-img_eoera2.png"
       />
@@ -60,7 +60,7 @@ const Login = () => {
         <div className="logo-form">
           <img
             src="https://res.cloudinary.com/danbzhmg7/image/upload/v1785905009/logo_gtr4id.png"
-            alt="logo"
+            alt="website logo"
             className="logo"
           />
           <h3>Insta Share</h3>

@@ -14,12 +14,13 @@ const Header = () => {
     Cookie.remove('jwt_token')
     navigate('/login', {replace: true})
   }
+  const onSearch = () => console.log(searchInput)
   return (
     <section className="header">
       <div className="header-logo">
         <img
           src="https://res.cloudinary.com/danbzhmg7/image/upload/v1785905009/logo_gtr4id.png"
-          alt="logo"
+          alt="website logo"
           className="logo"
         />
         <p>Insta Share</p>
@@ -31,13 +32,13 @@ const Header = () => {
             className="input"
             placeholder="Search Captions"
             value={searchInput}
-            onChange={e => setSearchInput(e.target.value)}
+            onChange={event => setSearchInput(event.target.value)}
           />
           <button
             type="button"
             className="search"
             data-testid="searchIcon"
-            onClick={() => onSearch(searchInput)}
+            onClick={onSearch}
           >
             <FaSearch />
           </button>

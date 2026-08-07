@@ -1,0 +1,33 @@
+.posts-con {
+  background-color: white;
+  font-size: 10px;
+}
+.posts-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+.posts-profile {
+  border-radius: 50%;
+  height: 40px;
+  border: 2px yellow solid;
+  padding: 5px;
+}
+.posts-img {
+  width: 100%;
+  height: 400px;
+  background-size: contain;
+}
+.bold-text-posts {
+  font-weight: 700;
+}
+.light-text-posts {
+  color: lightgrey;
+}
+.posts-icons {
+  display: flex;
+  gap: 10px;
+  font-size: large;
+  align-items: center;
+}

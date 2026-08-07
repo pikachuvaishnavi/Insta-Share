@@ -48,10 +48,16 @@ const UserDetails = () => {
     getData()
   }, [])
 
+  const alttext = {
+    imgalt: 'user profile',
+    storyalt: 'user story',
+    postalt: 'user post',
+  }
+
   return (
     <section>
       <Header />
-      <Profile details={userdata} />
+      <Profile details={userdata} alt={alttext} />
     </section>
   )
 }

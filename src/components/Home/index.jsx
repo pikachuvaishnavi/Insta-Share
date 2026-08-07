@@ -6,11 +6,11 @@ import PostList from '../PostList'
 
 const Home = () => {
   return (
-    <div>
+    <section className="home-section">
       <Header />
       <UserStories />
       <PostList />
-    </div>
+    </section>
   )
 }
 export default Home
