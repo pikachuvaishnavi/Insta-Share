@@ -1,5 +1,6 @@
 import './index.css'
 import {BsGrid3X3} from 'react-icons/bs'
+import {BiCamera} from 'react-icons/bi'
 
 const Profile = props => {
   const {details, alt} = props
@@ -36,33 +37,45 @@ const Profile = props => {
           <p>{bio}</p>
         </div>
       </section>
-      <div className="stories-border">
+      <ul className="stories-border">
         {stories.map(eachitem => (
-          <img
-            className="stories-img"
-            alt={storyalt}
-            src={eachitem.image}
-            key={eachitem.id}
-          />
-        ))}
-      </div>
-      <hr />
-      <section className="posts-con">
-        <div className="posts-header">
-          <BsGrid3X3 />
-          <p>Posts</p>
-        </div>
-        <div className="posts-border">
-          {posts.map(eachitem => (
+          <li>
             <img
-              className="posts-img"
+              className="stories-img"
+              alt={storyalt}
               src={eachitem.image}
               key={eachitem.id}
-              alt={postalt}
             />
-          ))}
-        </div>
-      </section>
+          </li>
+        ))}
+      </ul>
+      <hr />
+      <br />
+      {posts.length > 0 ? (
+        <section className="user-posts-con">
+          <div className="posts-header">
+            <BsGrid3X3 />
+            <h3 className="user-posts-title">Posts</h3>
+          </div>
+          <ul className="user-posts-border">
+            {posts.map(eachitem => (
+              <li>
+                <img
+                  className="posts-img"
+                  src={eachitem.image}
+                  key={eachitem.id}
+                  alt={postalt}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
+        <section>
+          <BiCamera />
+          <h2>No Posts Yet</h2>
+        </section>
+      )}
     </section>
   )
 }

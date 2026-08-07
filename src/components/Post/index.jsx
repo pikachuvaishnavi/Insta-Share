@@ -1,14 +1,10 @@
 import './index.css'
-
-import {BsHeart, BsFillShareFill} from 'react-icons/bs'
-import {FcLike} from 'react-icons/fc'
-import {FaRegComment} from 'react-icons/fa'
-import {useState} from 'react'
+import PostActions from '../PostActions'
 
 const Post = props => {
-  const [liked, setLiked] = useState(false)
   const {details} = props
   const {
+    id,
     userName,
     profilePic,
     postDetails,
@@ -18,12 +14,8 @@ const Post = props => {
     comments,
   } = details
 
-  const likeHeart = () => {
-    setLiked(prev => !prev)
-  }
-
   return (
-    <div className="posts-con">
+    <li className="posts-con">
       <div className="posts-user">
         <img
           className="posts-profile"
@@ -32,30 +24,23 @@ const Post = props => {
         />
         <h4>{userName}</h4>
       </div>
-      <img className="posts-img" src={postDetails.image_url} />
-      <div className='posts-icons'>
-        {liked ? (
-          <button onClick={likeHeart} data-testid="heart" alt="likeIcon">
-            <BsHeart />
-          </button>
-        ) : (
-          <button onClick={likeHeart} data-testid="unlike" alt="unLikeIcon">
-            <FcLike />
-          </button>
-        )}
-        <FaRegComment />
-        <BsFillShareFill />
+      <img
+        className="posts-details-img"
+        alt="post"
+        src={postDetails.image_url}
+      />
+      <div className="posts-text-con">
+        <PostActions postId={id} likesCount={likesCount} />
+        <p>{postDetails.caption}</p>
+        {comments.map(item => (
+          <p key={item.user_id}>
+            <span className="bold-text-posts">{item.user_name}</span>
+            {item.comment}
+          </p>
+        ))}
+        <p className="light-text-posts">{createdAt}</p>
       </div>
-      <p className="bold-text-posts">{likesCount} likes</p>
-      <p>{postDetails.caption}</p>
-      {comments.map(item => (
-        <p>
-          <span className="bold-text-posts">{item.user_name}</span>{' '}
-          {item.comment}
-        </p>
-      ))}
-      <p className="light-text-posts">{createdAt}</p>
-    </div>
+    </li>
   )
 }
 export default Post

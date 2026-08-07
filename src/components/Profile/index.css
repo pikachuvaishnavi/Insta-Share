@@ -1,6 +1,6 @@
 .myprofile {
   padding: 1% 20%;
-  background-color: #e9ecef;
+  background-color: whitesmoke;
   min-height: 100vh;
 }
 .profile-img {
@@ -45,10 +45,10 @@
   font-size: 20px;
   /* margin: 20px 0; */
 }
-.posts-con {
+.user-posts-con {
   padding: 10px;
 }
-.posts-border {
+.user-posts-border {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* border: 1px grey solid; */
@@ -57,4 +57,7 @@
 .posts-img {
   width: 100%;
   object-fit: cover;
+}
+.user-posts-title {
+  font-size: medium;
 }

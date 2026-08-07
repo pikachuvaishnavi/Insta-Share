@@ -1,6 +1,11 @@
 import './index.css'
+import {useNavigate} from 'react-router'
 
 const NotFound = () => {
+  const navigate = useNavigate()
+  const homePage = () => {
+    navigate('/')
+  }
   return (
     <section className="notfound-page">
       <img
@@ -13,7 +18,7 @@ const NotFound = () => {
         <br />
         Please go back to the homepage.
       </p>
-      <button>Home Page</button>
+      <button onClick={homePage}>Home Page</button>
     </section>
   )
 }

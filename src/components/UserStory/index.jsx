@@ -1,13 +1,16 @@
 import './index.css'
+import {Link} from 'react-router'
 
 const UserStory = props => {
   const {stories} = props
-  const {userName, imgUrl} = stories
+  const {userName, userId, imgUrl} = stories
   return (
-    <div className="stories">
-      <img src={imgUrl} className="storyimg" alt="user story" />
+    <li className="stories">
+      <Link to={`/users/${userId}`}>
+        <img src={imgUrl} className="storyimg" alt="user story" />
+      </Link>
       <p className="story-user-name">{userName}</p>
-    </div>
+    </li>
   )
 }
 export default UserStory

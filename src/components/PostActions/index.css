@@ -1,0 +1,14 @@
+.posts-icons {
+  display: flex;
+  gap: 10px;
+  font-size: large;
+  align-items: center;
+}
+.heart-button {
+  all: unset;
+}
+
+.bold-text-posts {
+  font-weight: 700;
+}
+

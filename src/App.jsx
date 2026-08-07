@@ -24,7 +24,7 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
         <Route
-          path="/myprofile"
+          path="/my-profile"
           element={
             <ProtectedRoute>
               <MyProfile />

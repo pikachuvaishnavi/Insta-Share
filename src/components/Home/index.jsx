@@ -4,12 +4,19 @@ import Header from '../Header'
 import UserStories from '../UserStories'
 import PostList from '../PostList'
 
+import {useState} from 'react'
+
 const Home = () => {
+  const [searchInput, setSearchInput] = useState('')
+
+  const onSearchPosts = value => {
+    setSearchInput(value)
+  }
   return (
     <section className="home-section">
-      <Header />
+      <Header onSearchPosts={onSearchPosts} />
       <UserStories />
-      <PostList />
+      <PostList searchInput={searchInput} />
     </section>
   )
 }

@@ -11,3 +11,13 @@
 .slick-next {
   z-index: 100;
 }
+.loader-container {
+  padding: 3% 20%;
+  text-align: center;
+  font-size: 50px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,6 +1,6 @@
 import './index.css'
 
-const FailureView = () => {
+const FailureView = ({onRetry}) => {
   return (
     <section className="failure-page">
       <img
@@ -8,7 +8,7 @@ const FailureView = () => {
         alt="failure view"
       />
       <h3>Something went wrong. Please try again</h3>
-      <button>Try again</button>
+      <button onClick={onRetry}>Try again</button>
     </section>
   )
 }

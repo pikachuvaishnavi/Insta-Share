@@ -6,7 +6,9 @@ import Cookie from 'js-cookie'
 import {useNavigate} from 'react-router'
 import {useState} from 'react'
 
-const Header = () => {
+const Header = props => {
+  const {onSearchPosts} = props
+
   const [searchInput, setSearchInput] = useState('')
 
   const navigate = useNavigate()
@@ -14,23 +16,25 @@ const Header = () => {
     Cookie.remove('jwt_token')
     navigate('/login', {replace: true})
   }
-  const onSearch = () => console.log(searchInput)
+  const onSearch = () => onSearchPosts(searchInput)
   return (
     <section className="header">
       <div className="header-logo">
-        <img
-          src="https://res.cloudinary.com/danbzhmg7/image/upload/v1785905009/logo_gtr4id.png"
-          alt="website logo"
-          className="logo"
-        />
-        <p>Insta Share</p>
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/danbzhmg7/image/upload/v1785905009/logo_gtr4id.png"
+            alt="website logo"
+            className="logo"
+          />
+        </Link>
+        <h3>Insta Share</h3>
       </div>
       <div className="lists">
         <div className="search-icon">
           <input
-            type="text"
+            type="search"
             className="input"
-            placeholder="Search Captions"
+            placeholder="Search Caption"
             value={searchInput}
             onChange={event => setSearchInput(event.target.value)}
           />
@@ -44,7 +48,7 @@ const Header = () => {
           </button>
         </div>
         <Link to="/">Home</Link>
-        <Link to="/myprofile">Profile</Link>
+        <Link to="/my-profile">Profile</Link>
         <button className="logout" onClick={logoutApp}>
           Logout
         </button>
